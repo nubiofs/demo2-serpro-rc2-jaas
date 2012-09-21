@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>exp</groupId>
+	<artifactId>rc2jsf-serpro</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>${project.artifactId}</name>
+
+	<parent>
+		<groupId>br.gov.serpro.parent</groupId>
+		<artifactId>serpro-demoiselle-parent-webapp</artifactId>
+		<version>2.0.0</version>
+	</parent>
+
+	<dependencies>
+		<!-- Demoiselle Extensions -->
+		<dependency>
+			<groupId>br.gov.frameworkdemoiselle</groupId>
+			<artifactId>demoiselle-jpa</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>br.gov.frameworkdemoiselle</groupId>
+			<artifactId>demoiselle-jta</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Demoiselle Components -->
+		<dependency>
+			<groupId>br.gov.frameworkdemoiselle.component</groupId>
+			<artifactId>demoiselle-report</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>br.gov.frameworkdemoiselle.component</groupId>
+			<artifactId>demoiselle-authorization</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Bibliotecas específicas da aplicação -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<scm>
+		<connection>scm:cvs:pserver:USUÁRIO-CVS-DO-CONTINUUM:@localhost:PORTA-DO-STUNNEL:/PATH-DO-CVS-DA-APLICAÇÃO</connection>
+		<developerConnection>scm:cvs:pserver:USUÁRIO-CVS-DO-CONTINUUM:@localhost:PORTA-DO-STUNNEL:/PATH-DO-CVS-DA-APLICAÇÃO</developerConnection>
+	</scm>
+
+	<ciManagement>
+		<system>Continuum</system>
+		<url>http://continuum.SIGLA-DA-REGIONAL.serpro:8080/continuum</url>
+		<notifiers>
+			<notifier>
+				<type>mail</type>
+				<sendOnError>true</sendOnError>
+				<sendOnFailure>true</sendOnFailure>
+				<sendOnSuccess>true</sendOnSuccess>
+				<sendOnWarning>true</sendOnWarning>
+				<configuration>
+					<address>EMAIL-A-SER-NOTIFICADO</address>
+				</configuration>
+			</notifier>
+		</notifiers>
+	</ciManagement>
+
+	<repositories>
+		<repository>
+			<id>component.internal</id>
+			<name>SERPRO Component Maven Repository</name>
+			<url>http://archiva.desenv.serpro/repository/component-internal</url>
+		</repository>
+	</repositories>
+
+	<properties>
+		<demoiselle.version>2.2.0</demoiselle.version>
+	</properties>
+</project>
