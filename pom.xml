@@ -17,6 +17,46 @@
 		<version>2.0.0</version>
 	</parent>
 
+	<!-- Estas definições devem ficar no parent! -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>br.gov.frameworkdemoiselle</groupId>
+				<artifactId>demoiselle-framework-bom</artifactId>
+				<version>${demoiselle.framework.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>br.gov.frameworkdemoiselle.component</groupId>
+				<artifactId>demoiselle-report</artifactId>
+				<version>${demoiselle.report.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>br.gov.frameworkdemoiselle.component</groupId>
+				<artifactId>demoiselle-junit</artifactId>
+				<version>${demoiselle.junit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>3.6.0.Final</version>
+				<exclusions>
+					<exclusion>
+						<groupId>javassist</groupId>
+						<artifactId>javassist</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 		<!-- Demoiselle Extensions -->
 		<dependency>
@@ -91,6 +131,8 @@
 	</repositories>
 
 	<properties>
-		<demoiselle.version>2.2.0</demoiselle.version>
+		<demoiselle.framework.version>2.3.0-RC2-SNAPSHOT</demoiselle.framework.version>
+		<demoiselle.junit.version>2.3.0-RC1</demoiselle.junit.version>
+		<demoiselle.report.version>2.0.5-SNAPSHOT</demoiselle.report.version>
 	</properties>
 </project>
