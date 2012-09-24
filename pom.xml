@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>exp</groupId>
-	<artifactId>rc2jsf-serpro</artifactId>
+	<artifactId>rc2jsf-serpro-jaas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
