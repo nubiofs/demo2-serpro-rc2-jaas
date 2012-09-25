@@ -6,23 +6,23 @@
 	<title>Tela de Login</title>
 </h:head>
 	<h:body>
-		<form method="post" action="j_security_check">
+		<h:form>
 			<table align="center">
 				<tr>
 					<td colspan="2"><h2>Digite as informações de Login:</h2></td>
 				</tr>
 				<tr>
-					<td><label for="username">Login</label></td>
-					<td><input type="text" id="username" name="j_username" /></td>
+					<td><h:outputLabel for="username" value="Login" /></td>
+					<td><h:inputText id="username" value="#{credentials.username}" /></td>
 				</tr>
 				<tr>
-					<td><label for="password">Senha</label></td>
-					<td><input type="password" id="password" name="j_password" /></td>
+					<td><h:outputLabel for="password" value="Login" /></td>
+					<td><h:inputSecret id="password" value="#{credentials.password}" /></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" value="Entrar" /></td>
+					<td colspan="2"><h:commandButton value="Entrar" action="#{securityContext.login}" /></td>
 				</tr>
 			</table>
-		</form>
+		</h:form>
 	</h:body>
 </html>

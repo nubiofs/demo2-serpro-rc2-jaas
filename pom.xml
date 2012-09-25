@@ -76,11 +76,6 @@
 			<artifactId>demoiselle-report</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>br.gov.frameworkdemoiselle.component</groupId>
-			<artifactId>demoiselle-authorization</artifactId>
-			<scope>compile</scope>
-		</dependency>
 
 		<!-- Bibliotecas específicas da aplicação -->
 		<dependency>
@@ -97,6 +92,14 @@
 			<groupId>hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- Biblioteca específica do JBoss AS -->
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jbosssx</artifactId>
+			<version>3.2.3</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 

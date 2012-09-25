@@ -3,6 +3,7 @@ package exp.rc2jsf.view.managedbean;
 import javax.inject.Inject;
 
 import br.gov.frameworkdemoiselle.annotation.PreviousView;
+import br.gov.frameworkdemoiselle.security.RequiredRole;
 import br.gov.frameworkdemoiselle.stereotype.ViewController;
 import br.gov.frameworkdemoiselle.template.AbstractEditPageBean;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
@@ -34,6 +35,7 @@ public class FavoritoEditMB extends AbstractEditPageBean<Favorito, Long> {
 
 	@Override
 	@Transactional
+	@RequiredRole("guest")
 	public String update() {
 		this.bc.update(getBean());
 		return getPreviousView();
