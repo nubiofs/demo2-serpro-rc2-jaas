@@ -12,21 +12,33 @@
 	<name>${project.artifactId}</name>
 
 	<parent>
-		<groupId>br.gov.serpro.parent</groupId>
-		<artifactId>serpro-demoiselle-parent-webapp</artifactId>
-		<version>2.0.0</version>
+		<groupId>br.gov.frameworkdemoiselle</groupId>
+		<artifactId>demoiselle-jsf-parent</artifactId>
+		<version>2.5.1</version>
 	</parent>
+
+<!-- 	<parent> -->
+<!-- 		<groupId>br.gov.serpro.parent</groupId> -->
+<!-- 		<artifactId>serpro-demoiselle-parent-webapp</artifactId> -->
+<!-- 		<version>2.0.0</version> -->
+<!-- 	</parent> -->
+
+<!-- 	<parent> -->
+<!-- 		<groupId>br.gov.serpro.parent</groupId> -->
+<!-- 		<artifactId>serpro-demoiselle-parent-webappt</artifactId> -->
+<!-- 		<version>2.0.0-BETA1-SNAPSHOT</version> -->
+<!-- 	</parent> -->
 
 	<!-- Estas definições devem ficar no parent! -->
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>br.gov.frameworkdemoiselle</groupId>
-				<artifactId>demoiselle-framework-bom</artifactId>
-				<version>${demoiselle.framework.version}</version>
-				<scope>import</scope>
-				<type>pom</type>
-			</dependency>
+<!-- 			<dependency> -->
+<!-- 				<groupId>br.gov.frameworkdemoiselle</groupId> -->
+<!-- 				<artifactId>demoiselle-framework-bom</artifactId> -->
+<!-- 				<version>${demoiselle.framework.version}</version> -->
+<!-- 				<scope>import</scope> -->
+<!-- 				<type>pom</type> -->
+<!-- 			</dependency> -->
 
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle.component</groupId>
@@ -93,7 +105,7 @@
 			<artifactId>hsqldb</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- Biblioteca específica do JBoss AS -->
 		<dependency>
 			<groupId>jboss</groupId>
@@ -126,10 +138,52 @@
 	</ciManagement>
 
 	<repositories>
+<!-- 		<repository> -->
+<!-- 			<id>component.internal</id> -->
+<!-- 			<name>SERPRO Component Maven Repository</name> -->
+<!-- 			<url>http://archiva.desenv.serpro/repository/component-internal</url> -->
+<!-- 		</repository> -->
+<!-- 		<repository> -->
+<!-- 			<id>component.internal</id> -->
+<!-- 			<name>SERPRO Component Repository for Maven</name> -->
+<!-- 			<url>http://archiva.desenv.serpro:8080/archiva/repository/component-internal</url> -->
+<!-- 		</repository> -->
+<!-- 		<repository> -->
+<!-- 			<id>component.snapshots</id> -->
+<!-- 			<name>SERPRO Component Repository for Maven</name> -->
+<!-- 			<url>http://archiva.desenv.serpro:8080/archiva/repository/component-snapshots</url> -->
+<!-- 		</repository> -->
+<!-- 		<repository> -->
+<!-- 			<id>archiva.internal</id> -->
+<!-- 			<name>SERPRO Repository for Maven</name> -->
+<!-- 			<url>http://archiva.desenv.serpro:8080/archiva/repository/internal</url> -->
+<!-- 		</repository> -->
+<!-- 		<repository> -->
+<!-- 			<id>archiva.snapshots</id> -->
+<!-- 			<name>SERPRO Repository for Maven</name> -->
+<!-- 			<url>http://archiva.desenv.serpro:8080/archiva/repository/snapshots</url> -->
+<!-- 		</repository> -->
 		<repository>
-			<id>component.internal</id>
-			<name>SERPRO Component Maven Repository</name>
-			<url>http://archiva.desenv.serpro/repository/component-internal</url>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>sonatype-nexus-releases</id>
+			<name>Sonatype Nexus Releases</name>
+			<url>https://oss.sonatype.org/content/repositories/releases</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 		</repository>
 	</repositories>
 
